@@ -1,13 +1,27 @@
 (ns reaflow.core
-  (:require [reagent.dom.client :as rdomc]))
+  (:require [reagent.dom.client :as rdom]
+            ["reaflow" :refer [Canvas]]))
 
 (defonce root
-  (rdomc/create-root (js/document.getElementById "app")))
+  (rdom/create-root (js/document.getElementById "app")))
+
+(defn test-canvas []
+  [:> Canvas
+   {:nodes [{:id "1"
+             :text "1"}
+            {:id "2"
+             :text "2"}]
+    :edges [{:id "1-2"
+             :from "1"
+             :to "2"}]
+    :maxHeight 500
+    :maxWidth 500}])
 
 (defn test-component []
-  [:div [:h2 "test component"]
-   [:p "with react create root"]])
+  [:p "Basic test"
+   [test-canvas]])
 
 (defn init! []
   (js/console.debug "*** REAFLOW DEMO ***\n")
-    (rdomc/render root [test-component]))
+  (rdom/render root  [test-component]))
+

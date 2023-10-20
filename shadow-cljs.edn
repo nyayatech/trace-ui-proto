@@ -2,7 +2,7 @@
 {:nrepl {:port 8777}
  :dev-http {8016 "public"}
 
- :deps {:aliases [:mermaid/trace]}
+ :deps {:aliases [:mermaid/trace :reaflow/trace]}
  
  :builds
  {:dev_mermaid 
@@ -12,4 +12,12 @@
    :modules
    {:demo_mermaid
     {:init-fn mermaid.core/init!
-     :exports {init mermaid.core/init!}}}}}}
+     :exports {init mermaid.core/init!}}}}
+  :dev_reaflow 
+  {:target :esm
+   :output-dir "public/js"
+   :devtools {:preloads [devtools.preload]}
+   :modules
+   {:demo_reaflow
+    {:init-fn reaflow.core/init!
+     :exports {init reaflow.core/init!}}}}}}

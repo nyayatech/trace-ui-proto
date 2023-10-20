@@ -1,7 +1,6 @@
 (ns reaflow.core
   (:require [reagent.dom.client :as rdomc]))
 
-
 (defonce root
   (rdomc/create-root (js/document.getElementById "app")))
 
@@ -11,5 +10,4 @@
 
 (defn init! []
   (js/console.debug "*** REAFLOW DEMO ***\n")
-  (let [el (test-component)]
-    (rdomc/render root [test-component])))
+    (rdomc/render root [test-component]))

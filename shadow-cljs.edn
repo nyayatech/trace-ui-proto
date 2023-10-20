@@ -1,0 +1,15 @@
+;; shadow-cljs configuration
+{:nrepl {:port 8777}
+ :dev-http {8016 "public"}
+
+ :deps {:aliases [:mermaid/trace]}
+ 
+ :builds
+ {:dev_mermaid 
+  {:target :esm
+   :output-dir "public/js"
+   :devtools {:preloads [devtools.preload]}
+   :modules
+   {:demo_mermaid
+    {:init-fn mermaid.core/init!
+     :exports {init mermaid.core/init!}}}}}}

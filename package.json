@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "shadow-cljs": "^2.25.8"
+  },
+  "dependencies": {
+    "mermaid": "^10.5.0"
+  }
+}

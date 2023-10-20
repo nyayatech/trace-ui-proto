@@ -41,9 +41,31 @@ This project uses:
 
 - clojurescript 
 - shadow-cljs 
+- node js v > 16.0.0
+- yarn
 
 to build and serve locally the demo widgets.
 
+First install deps
+```bash
+yarn
+```
+
+Then, to start a watcher:
+
+```bash
+yarn shadow-cljs watch *build-id*
+# yarn shadow-cljs watch dev_reaflow
+```
+
+builds: 
+- dev_reaflow
+- dev_mermaid
+- dev_flowgraph [todo]
+
+see `shadow-cljs.edn`
+
+Visit http://localhost:8016/
 
 
 ## Analysis
